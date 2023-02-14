@@ -1,9 +1,19 @@
 import React from 'react';
+import Content from './Content';
+import Search from './Search';
+import Sidebar from './Sidebar';
 
 function LandingPage   () {
     return (
         <div>
-            <h1>Landing Page</h1>
+        
+        <div className='landingpage_container'>
+            <Sidebar/>
+            <div>
+            <Search/>
+            <Content/>
+            </div>
+        </div>
         </div>
     )
 }
