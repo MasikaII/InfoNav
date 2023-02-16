@@ -1,15 +1,16 @@
 import React from 'react';
 import Content from './Content';
 import Search from './Search';
-import Sidebar from './Sidebar';
-import './Landingpage.css';
+import HomeSidebar from './HomeSidebar';
+import './Home.css';
 
-function LandingPage   () {
+
+function Home () {
     return (
         <div>
         
-        <div className='landingpage_container'>
-            <Sidebar/>
+        <div className='home'>
+            <HomeSidebar/>
             <div>
             <Search/>
             <Content/>
@@ -19,4 +20,4 @@ function LandingPage   () {
     )
 }
 
-export default LandingPage;
+export default Home;
