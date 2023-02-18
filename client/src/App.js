@@ -8,7 +8,7 @@ import Mylogin from './components/Mylogin'
 import Register from './components/Register';
 import Home from './components/Home';
 import About from './components/About';
-
+import { AuthOProvider } from "@authO/authO-react";
 
 // import Feed from "./componentsChat";
 // import Sidebar from "./components/Sidebar";
@@ -16,16 +16,23 @@ import About from './components/About';
 function App() {
     return (
         <>
-            <BrowserRouter>
 
-                <Routes>
-                    <Route path="/" element={<LandingPage />} />
-                    <Route path="/Login" element={<Mylogin />} />
-                    <Route path="/register" element={<Register />} />
-                    <Route path="/Home" element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                </Routes>
-            </BrowserRouter>
+            <AuthOProvider
+                domain="localhost:3000"
+                redirectUri={window.location.origin}
+            >
+                <BrowserRouter>
+
+                    <Routes>
+                        <Route path="/" element={<LandingPage />} />
+                        <Route path="/Login" element={<Mylogin />} />
+                        <Route path="/register" element={<Register />} />
+                        <Route path="/Home" element={<Home />} />
+                        <Route path="/about" element={<About />} />
+                    </Routes>
+                </BrowserRouter>
+
+            </AuthOProvider>
         </>
     );
 }
