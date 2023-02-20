@@ -1,14 +1,18 @@
-import React, { useState } from "react";
-// import { useHistory } from "react-router-dom";
+import React, { useState } from "react"
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "./auth";
 
 export const Login = (props) => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
+    const auth = useAuth()
+    const navigate = useNavigate()
     // let history = useHistory();
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(email);
+        navigate('/home')
     }
     return (
         <div style={{

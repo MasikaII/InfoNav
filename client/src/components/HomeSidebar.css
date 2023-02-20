@@ -5,8 +5,8 @@
     /* border: 2px solid #5f6472; */
     height:80vh;
     width: 25vh;
-    padding-top: 20rem;
-    justify-content: space-between;
+    padding-top: 5rem;
+    justify-content: space-evenly;
   }
 
   .top_button{
@@ -26,6 +26,9 @@
     margin: 1rem;
   
   }
+  .top_button :hover{
+    background-color: #8C8CDA;
+  }
 
   .bottom_buttons{
     display: flex;
@@ -43,6 +46,5 @@
     margin-bottom: 1Srem;
     justify-content: center;
     margin: 0.5rem;
-    /* background-color: red; */
   
   }
