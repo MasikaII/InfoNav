@@ -1,5 +1,6 @@
 body {
-    background: #010922;
+    background: white;
+    height: 100%;
 }
 
 .app {
@@ -9,7 +10,12 @@ body {
   margin-left: auto;
   margin-right: auto;
   padding: 0 10px;
-  background: #010922;
+  background: white;
 }
 
-
+/* .body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  
+} */

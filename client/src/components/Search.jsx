@@ -4,12 +4,12 @@ function Search() {
   return (
     <div style={{
         width: '100%',
-        // border: '1px solid #ccc',
-        display: 'flex',
-        justifyContent: 'center',
-        marginBottom:'1rem'
+        height: '1rem',
+        padding:'1.5rem',
     }}>
-    <input type='text' placeholder='Search' className='nav_search' />
+    <input type='text' placeholder='Search' className='nav_search' style={{marginLeft:'5rem',
+    color:'black',
+  }} />
     </div>
   )
 }

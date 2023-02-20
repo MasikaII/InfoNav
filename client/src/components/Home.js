@@ -3,19 +3,18 @@ import Content from './Content';
 import Search from './Search';
 import HomeSidebar from './HomeSidebar';
 import './Home.css';
+import GoogleAuth from './GoogleAuth';
 
 
 function Home () {
     return (
-        <div>
-        
+        <div> 
         <div className='home'>
             <HomeSidebar/>
             <div>
-            <Search/>
             <Content/>
             </div>
-        </div>
+            </div>
         </div>
     )
 }
