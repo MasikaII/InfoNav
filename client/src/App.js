@@ -11,13 +11,13 @@ import Profile from './components/Profile';
 import { AuthProvider } from './components/auth';
 import Header from './components/common/header/Header';
 import Navbar from './components/common/header/navbar/Navbar';
+import GoogleAuth from './components/GoogleAuth';
 
 
 function App() {
     return (
         <>
         <Header />
-        <AuthProvider>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<LandingPage />} />
@@ -28,7 +28,6 @@ function App() {
                     <Route path="/about" element={<About />} />
                 </Routes>
             </BrowserRouter>
-            </AuthProvider>
         </>
     );
 }
