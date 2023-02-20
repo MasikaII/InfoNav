@@ -3,17 +3,26 @@ import Content from './Content';
 import Search from './Search';
 import HomeSidebar from './HomeSidebar';
 import './Home.css';
-import GoogleAuth from './GoogleAuth';
+import SignIn from './mysignin';
+import { useNavigate } from 'react-router-dom';
+//import GoogleAuth from './GoogleAuth';
 
 
-function Home () {
+function Home() {
+    const navigate = useNavigate();
+
+    const logout = () => {
+        localStorage.clear()
+        navigate('/')
+    };
     return (
-        <div> 
-        <div className='home'>
-            <HomeSidebar/>
-            <div>
-            <Content/>
-            </div>
+        <div>
+            <div className='home'>
+                <HomeSidebar />
+                <div>
+                    <button onClick={logout}>logout</button>
+                    <Content />
+                </div>
             </div>
         </div>
     )
