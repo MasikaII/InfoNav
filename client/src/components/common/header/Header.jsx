@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Navbar } from '.components/common/header/Header'
 import './Header.css';
 
 function Header () {

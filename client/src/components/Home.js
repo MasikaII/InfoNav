@@ -18,11 +18,19 @@ function Home() {
     return (
         <div>
             <div className='home'>
-                <HomeSidebar />
-                <div>
-                    <button onClick={logout}>logout</button>
-                    <Content />
-                </div>
+            <div>
+            <button onClick={logout} style={{
+                height: '50px',
+                width: '190px',
+                borderRadius: '20px',
+                top: '0',               
+                diplay: 'flex',
+                border: '3px solid #ED553B'
+                 }}>logout</button>
+            <HomeSidebar /> 
+            </div>               
+                <Content />
+              
             </div>
         </div>
     )

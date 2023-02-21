@@ -5,9 +5,6 @@ const Signin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const signIn = {} => {
-
-}
 
 return (
   <div className='sign-in-container'>
