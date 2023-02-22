@@ -32,24 +32,18 @@ function Content() {
     <div>
     <Search />
     <div className='content_section' style={{
-      // border:'2px solid black'
     }}>
         <div style={{
           color: "black",
           width: "600px",
           margin: "40px auto",
           padding: "20rm",
-          // border:'2px solid black'
-          // backgroundColor: "yellow",
-          // textAlign: 'center'
         }}>
           {blogs.map((blog, index) => (
             <div className="blog-preview" key={blog.id} >
             <div style={{ padding: '5rem',
-          // border: '1px solid rgba(255, 255, 255, 0.2)',
           borderRadius: '20px',
           margin: '0.5rem',
-          // backgroundColor: 'rgb(29,11,5)',
           display: 'inline',
 
           }}>

@@ -1,9 +1,9 @@
-body{
+/* body{
   background: #010922;
   margin: 0;
   padding: 0;
   height: 100%;
-}
+} */
 .topbar {
   display: flex;
   height: 70px;

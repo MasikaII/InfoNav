@@ -39,13 +39,14 @@
     height: 70vh;
     padding-bottom: 5rem;
     margin-bottom: 2rem;
-    width: 45vw;
+    width: 47vw;
     justify-content: center;
     overflow-y: scroll;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     margin-right: auto;
     margin-left: auto;
-    position: relative;; 
+    position: relative;
+    border-radius: 10px;
   }
 
   .content_section::-webkit-scrollbar {

@@ -25,12 +25,13 @@ function Home() {
                 borderRadius: '20px',
                 top: '0',               
                 diplay: 'flex',
-                border: '3px solid #ED553B'
-                 }}>logout</button>
+                border: '3px solid #187741',
+                color: '#187741',
+                fontSize: '15px',
+                 }}>Log out</button>
             <HomeSidebar /> 
             </div>               
-                <Content />
-              
+                <Content /> 
             </div>
         </div>
     )

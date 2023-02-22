@@ -6,7 +6,7 @@ function GoogleAuth() {
     <div style={{
       boxsizing: 'border-box',
       position: 'absolute',
-      border: '1px solid #5f6472',
+      border: '2px solid #187741',
       padding: '0 1rem',
       borderradius: '20px',
       top: '167px',
@@ -15,9 +15,7 @@ function GoogleAuth() {
       width: '300px',
       borderRadius: '10px',
       alignItems: 'center'
-
-
-    }}>
+    }} className= "sign in">
       <div className="google-btn" >
       <div className="google-icon-wrapper" >
       <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />

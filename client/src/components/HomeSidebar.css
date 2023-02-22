@@ -2,7 +2,6 @@
     display:flex;
     flex-direction: column;
     padding: 1rem;
-    /* border: 2px solid #5f6472; */
     height:80vh;
     width: 25vh;
     padding-top: 5rem;
@@ -19,15 +18,15 @@
     font-size: 1.2rem;
     font-weight: 500;
     transition: all 0.3s ease;
-    border: 1px solid #5f6472;
+    border: 2px solid #187741;
     padding: 1rem;
     margin-bottom: 1rem;
     justify-content: center;
     margin: 1rem;
   
   }
-  .top_button :hover{
-    background-color: #8C8CDA;
+  .top_button:hover{
+    background-color: #187741;
   }
 
   .bottom_buttons{
@@ -36,7 +35,7 @@
     padding: 1rem;
     border-radius: 30px;
     color: #fff;
-    background-color: #8C8CDA;
+    background-color: #187741;
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 500;
