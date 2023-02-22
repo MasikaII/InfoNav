@@ -1,13 +1,16 @@
 import React from 'react';
-// import { Navbar } from '.components/common/header/Header'
 import './Header.css';
-
 function Header () {
-
   return (
     <section className="header">
       <section className="header-top">
-        <section className="header-top__logo">
+        <section className="header-top__logo">      
+        <img src="./mylogo.svg" alt="ai" style={{height: '70px',
+        width: '100%',
+        height: '100px',
+        padding: '0',
+        margin: '0',
+        }}/>
           <a href="/" className="header-logo" style={{color: 'white'
          }}>Info Nav</a>
         </section>

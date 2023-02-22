@@ -8,7 +8,6 @@ export const Login = (props) => {
     const [pass, setPass] = useState('');
     const auth = useAuth()
     const navigate = useNavigate()
-    // let history = useHistory();
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(email);
@@ -43,7 +42,7 @@ export const Login = (props) => {
 </div>
                 <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
 </div>
-                <div className="link-btn-login" type="submit">Log In</div>
+                <button className="link-btn-login" type="submit">Log In</button>
             </form>
             {/* <button className="link-btn" onClick={() => props.onFormSwitch('register')}>Don't have an account? Register here.</button> */}
             <div style={{

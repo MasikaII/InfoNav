@@ -23,11 +23,17 @@ function SignIn() {
   return (
     <div>
       {value ? <Home /> :
-        <button onClick={handleClick}>Sign in with Google</button>
+        <button onClick={handleClick} style={{
+        borderRadius: '20px',
+        border: '1px solid #5f6472',
+        height: '40px',
+        width: '210px',
+        marginTop: '20px',
+        alignItems: 'center',
+      }}>Sign in with Google</button>
       }
     </div>
   );
 }
 
 export default SignIn;
-

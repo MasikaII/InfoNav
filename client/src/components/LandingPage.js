@@ -1,18 +1,14 @@
 import React from 'react';
 import Content from './Content';
-import Search from './Search';
-import Sidebar from './Sidebar';
 import './Landingpage.css';
 import GoogleAuth from './GoogleAuth';
+import Landingsidebar from './Landingsidebar';
 
 function LandingPage   () {
     return (
-        <div style={{
-            backgroundColor: 'rgb(250,245,255)',
-            height:'103vh'
-        }}>
+        <div className='land'>
         <div className='landingpage_container'>
-            <Sidebar/>
+            <Landingsidebar/>
             <div className='landingpage_container'>
             <div className='landingpage_container'>
             <Content/>
@@ -25,5 +21,4 @@ function LandingPage   () {
         </div>
     )
 }
-
-export default LandingPage;
+export default LandingPage;                     
