@@ -1,3 +1,4 @@
+import { Button } from '@mui/material';
 import React from 'react';
 import Content from './Content';
 import Search from './Search';
@@ -5,6 +6,7 @@ import HomeSidebar from './HomeSidebar';
 import './Home.css';
 import SignIn from './mysignin';
 import { useNavigate } from 'react-router-dom';
+import SettingsIcoms from '@mui/icons-material/Settings';
 //import GoogleAuth from './GoogleAuth';
 
 
@@ -31,7 +33,7 @@ function Home() {
                  }}>Log out</button>
             <HomeSidebar /> 
             </div>               
-                <Content /> 
+                <Content />
             </div>
         </div>
     )
