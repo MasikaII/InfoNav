@@ -8,12 +8,23 @@ function SignIn() {
   const [value, setValue] = useState('');
   const Navigate = useNavigate();
 
-  const handleClick = () => {
-    signInWithPopup(auth, provider).then((data) => {
-      setValue(data.user.email);
-      localStorage.setItem("email", data.user.email);
+  const handleClick = async() => {
+    // signInWithPopup(auth, provider).then((data) => {
+    //   setValue(data.user.email);
+    //   alert(JSON.stringify(data))
+    //   localStorage.setItem("user", JSON.stringify(data));
+    //   Navigate("/home");
+    // });
+    try{
+      const data = await signInWithPopup(auth, provider);
+      // setValue(data.user.email);
+      alert(JSON.stringify(data))
+      localStorage.setItem("user", JSON.stringify(data));
       Navigate("/home");
-    });
+    }
+    catch(err){
+      alert(err.message)
+    }
   };
 
   useEffect(() => {
@@ -26,11 +37,10 @@ function SignIn() {
         <button onClick={handleClick} style={{
         borderRadius: '20px',
         border: '1px solid #5f6472',
-        height: '40px',
-        width: '210px',
-        marginTop: '20px',
-        alignItems: 'center',
-      }}>Sign in with Google</button>
+        height: '35px',
+        width: '240px',
+        marginTop: '20px', 
+      }} className="Googlef">Sign in with Google</button>
       }
     </div>
   );

@@ -17,7 +17,8 @@ function Sidebar() {
     <span className='nav_link_bottom'>
     <Link to="/Post" class="text_decorator">Post</Link></span>
         <span className='nav_link_bottom'>
-        <Link to="/Chat" class="text_decorator">Chat</Link></span>
+        <Link to="/chat" class="text_decorator">Chat</Link>
+        </span>
         <span className='nav_link'>
         <Link to="/Login" class="text_decorator">Login</Link>
         </span>

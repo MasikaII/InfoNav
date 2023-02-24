@@ -1,6 +1,12 @@
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
 body {
     background: white;
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .app {
@@ -13,9 +19,6 @@ body {
   background: white;
 }
 
-/* .body {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  
-} */
+.app {
+  font-family: sans-serif;
+}

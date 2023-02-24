@@ -6,10 +6,10 @@ import Landingsidebar from './Landingsidebar';
 
 function LandingPage   () {
     return (
+    <>
         <div className='land'>
         <div className='landingpage_container'>
             <Landingsidebar/>
-            <div className='landingpage_container'>
             <div className='landingpage_container'>
             <Content/>
             </div>
@@ -18,7 +18,7 @@ function LandingPage   () {
             </div>
             </div>
         </div>
-        </div>
+    </>
     )
 }
 export default LandingPage;                     

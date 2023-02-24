@@ -6,22 +6,17 @@ function About() {
   <Sidebar />
   return (
     <>
-
       <div className="content">
         <div class="topbar">
           <ul class="nav-list">
             <div class="logo">
-              <img src="https://imgs.search.brave.com/Bsp9-5dLLcL6bt4jrvpMkeyZFm7MyN59G-6_SY4sQ8o/rs:fit:948:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC52/T2NfaGNreWFtS1dw/Q2UtVHptaW9RSGFE/dCZwaWQ9QXBp" alt="ai" />
             </div>
             <li><h3>INFO NAV</h3></li>
           </ul>
           <div class="rightbar">
             <h3>Streamline Connect Transform</h3>
           </div>
-
         </div>
-
-
         <section class="section">
           <div class="box-main">
             <div class="title">
