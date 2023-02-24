@@ -8,12 +8,23 @@ function SignIn() {
   const [value, setValue] = useState('');
   const Navigate = useNavigate();
 
-  const handleClick = () => {
-    signInWithPopup(auth, provider).then((data) => {
-      setValue(data.user.email);
-      localStorage.setItem("email", data.user.email);
+  const handleClick = async() => {
+    // signInWithPopup(auth, provider).then((data) => {
+    //   setValue(data.user.email);
+    //   alert(JSON.stringify(data))
+    //   localStorage.setItem("user", JSON.stringify(data));
+    //   Navigate("/home");
+    // });
+    try{
+      const data = await signInWithPopup(auth, provider);
+      // setValue(data.user.email);
+      alert(JSON.stringify(data))
+      localStorage.setItem("user", JSON.stringify(data));
       Navigate("/home");
-    });
+    }
+    catch(err){
+      alert(err.message)
+    }
   };
 
   useEffect(() => {

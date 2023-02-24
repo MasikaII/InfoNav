@@ -1,5 +1,4 @@
 import React from 'react'
-import HomeIcon from '@material-ui/icons/Home';
 function Chat () {
   return (
     <div style={{
