@@ -1,4 +1,4 @@
-import { PhotoSizeSelectActual } from '@material-ui/icons';
+//import { PhotoSizeSelectActual } from '@material-ui/icons';
 import React,{useState,useEffect} from 'react';
 
 const Profile = () => {
