@@ -1,13 +1,43 @@
 .home{
+  display: flex;
+  align-items: center;
+  height: 70vh;
+  width: 90vw;
+  background-color: white;
+  margin-top: 5rem;
+  padding: 10rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  .home{
+    display: block;
+    height: auto;
+    width: 100%;
+    background-color: white;
+    padding: 5rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .home{
+    display: block;
+    height: auto;
+    width: 100%;
+    background-color: white;
+    padding: 5rem;
+  }
+}
+/* 
+.home{
     display: flex;
     align-items: center;
     height: 70vh;
     width: 90vw;
     background-color: white;
     padding: 10rem;
-  }
+  } */
 
-  @media only screen and (max-width: 1000px) {
+  /* @media only screen and (max-width: 1000px) {
  .home{
     display: block;
     align-items: center;
@@ -17,4 +47,4 @@
     padding: 10rem;
   }
 
-  }
+  } */

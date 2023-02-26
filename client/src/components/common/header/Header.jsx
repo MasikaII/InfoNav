@@ -24,8 +24,8 @@ function Header () {
                 diplay: 'flex',
                 border: '3px solid #187741',
                 color: '#187741',
-                fontSize: '15px',
-                 }}><a href="/about">Contact us</a></button>
+                fontSize: '15px',     
+                 }}><a style={{ textDecoration: 'none',}}href="/about">Contact us</a></button>
           </section>
           <hr className="header-top__seperator" />
         </section>
