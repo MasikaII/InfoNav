@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const configuration = new Configuration({
-    apiKey: "Add key",
+    apiKey: "",
 });
 
 const openai = new OpenAIApi(configuration);
@@ -21,6 +21,7 @@ const port = 3080
 
 app.post('/', async (req, res) => {
     const { message } = req.body;
+    console.log(message, "message")
 
     const response = await openai.createCompletion({
         model: "text-davinci-003",
