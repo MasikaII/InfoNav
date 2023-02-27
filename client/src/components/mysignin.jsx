@@ -8,21 +8,21 @@ function SignIn() {
   const [value, setValue] = useState('');
   const Navigate = useNavigate();
 
-  const handleClick = async() => {
+  const handleClick = async () => {
     // signInWithPopup(auth, provider).then((data) => {
     //   setValue(data.user.email);
     //   alert(JSON.stringify(data))
     //   localStorage.setItem("user", JSON.stringify(data));
     //   Navigate("/home");
     // });
-    try{
+    try {
       const data = await signInWithPopup(auth, provider);
       // setValue(data.user.email);
       alert(JSON.stringify(data))
       localStorage.setItem("user", JSON.stringify(data));
       Navigate("/home");
     }
-    catch(err){
+    catch (err) {
       alert(err.message)
     }
   };
@@ -35,12 +35,12 @@ function SignIn() {
     <div>
       {value ? <Home /> :
         <button onClick={handleClick} style={{
-        borderRadius: '20px',
-        border: '1px solid #5f6472',
-        height: '35px',
-        width: '240px',
-        marginTop: '20px', 
-      }} className="Googlef">Sign in with Google</button>
+          borderRadius: '20px',
+          border: '1px solid #5f6472',
+          height: '35px',
+          width: '240px',
+          marginTop: '20px',
+        }} className="Googlef">Sign in with Google</button>
       }
     </div>
   );
