@@ -15,7 +15,7 @@ function LandingPage() {
                         <Content />
                     </div>
                     <div className='loginmail'>
-                        <Link to='/signup'>Login</Link>
+                        <Link to='/signup' style={{background: 'white'}}>Login</Link>
                     </div>
                     <div className='landingpage_container_auth'>
                         <GoogleAuth />

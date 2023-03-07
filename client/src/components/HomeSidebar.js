@@ -8,18 +8,18 @@ function HomeSidebar() {
         <div className="sidebar">
             <div>
                 <span className="top_button">
-                <Link to="/About" class="text_decorator">About</Link>
+                <Link to="/About" class="text_decorator" style={{color: 'white'}}>About</Link>
                 </span>
                 <span className="top_button">
-                <Link to="/Profile" class="text_decorator">Profile</Link>
+                <Link to="/Profile" class="text_decorator" style={{color: 'white'}}>Profile</Link>
                 </span>
                 <span className="top_button">
-                <Link to="/Chat" class="text_decorator">Chat</Link>
+                <Link to="/Chat" class="text_decorator" style={{color: 'white'}}>Chat</Link>
                 </span>
             </div>
             <div className="sidebar_bottom">
                 <span className="bottom_buttons">
-                <Link to="/Post" class="text_decorator">Post</Link>
+                <Link to="/Post" class="text_decorator" style={{color: 'white'}}>Post</Link>
                 </span>
             </div>
         </div>
