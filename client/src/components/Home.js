@@ -71,7 +71,7 @@ function Home() {
                             <div> 
                             <h1 style={{}}>{post.title}</h1>
                             </div>
-                            <p stye={{ color: 'white'}}>Author: {post.author.name}</p> 
+                            <p stye={{ color: 'white', fontWeight: 'bold'}}>Author: {post.author.name}</p> 
                             <p>{post.postText}</p>
                             </div>
                             <div className='deletePost'>
