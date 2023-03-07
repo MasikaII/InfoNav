@@ -93,3 +93,22 @@
   padding: 10px;
 }
 
+.abouttext {
+  padding-top: 0;
+  padding-bottom: 20px;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 20px;
+  margin-right: auto;
+  border-radius: 10px;
+  align-content: center;
+}
+
+.bottom-about {
+  display: fixed;
+  position: bottom;
+  height: 300px;
+  gap: 50px;
+  background: #001935;
+
+}

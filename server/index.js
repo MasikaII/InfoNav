@@ -4,12 +4,11 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: "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",
 });
 
 const openai = new OpenAIApi(configuration);
 // const response = await openai.listEngines();
-
 
 // Allowing our frontend to query our model
 const app = express()
@@ -21,6 +20,7 @@ const port = 3080
 
 app.post('/', async (req, res) => {
     const { message } = req.body;
+    console.log(message, "message")
 
     const response = await openai.createCompletion({
         model: "text-davinci-003",

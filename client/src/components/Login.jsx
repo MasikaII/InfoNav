@@ -18,8 +18,8 @@ export const Login = (props) => {
             display: "flex",
             justifyContent: "center",
             paddingTop:'10srem',
-            backgroundColor: "#010922",
-            height: "100vh",
+            backgroundColor: "white",
+            height: "90vh",
             
         }}>
         <div className="auth-form-container">

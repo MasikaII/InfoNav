@@ -1,11 +1,12 @@
 import React from 'react';
 import './Header.css';
+
 function Header () {
   return (
-    <section className="header">
+    <section className="header border">
       <section className="header-top">
         <section className="header-top__logo">      
-        <img src="./mylogo.svg" alt="ai" style={{height: '70px',
+        <img src="./mylogo.svg" alt="ai" style={{height: '50px',
         width: '100%',
         height: '100px',
         padding: '0',
@@ -22,8 +23,8 @@ function Header () {
                 borderRadius: '20px',
                 top: '0',               
                 diplay: 'flex',
-                border: '3px solid #187741',
-                color: '#187741',
+                border: '3px solid #062A42',
+                color: '#062A42',
                 fontSize: '15px',     
                  }}><a style={{ textDecoration: 'none',}}href="/about">Contact us</a></button>
           </section>
@@ -31,7 +32,7 @@ function Header () {
         </section>
       </section>
       <section className="header-bottom">
-        <section className="header-bottom__phone">
+        <section className="header-bottom__phone">     
         </section>
         <section className="header-bottom__email">
         </section>

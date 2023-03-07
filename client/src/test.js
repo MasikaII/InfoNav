@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { auth, provider } from "../firebase";
 import { signInWithPopup } from "firebase/auth";
+import { db, auth } from "../firebase-config";
 import { useHistory } from "react-router-dom";
+import { auth } from "./firebase-config";
 
 function SignIn() {
+  const [isAuth, setIsAuth] = useState(false);
   const [user, setUser] = useState(null);
   const history = useHistory();
 

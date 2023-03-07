@@ -1,6 +1,7 @@
-//import { PhotoSizeSelectActual } from '@material-ui/icons';
 import React,{useState,useEffect} from 'react';
-
+import { Link } from "react-router-dom";
+import "./About.css"
+import "./HomeSidebar.css";
 const Profile = () => {
   const [myuser,setMyUser]=useState(null)
   useEffect(()=>{
@@ -12,22 +13,23 @@ const Profile = () => {
     <div>
     <h1 style={{ color: 'White',
     textAlign: 'center',
-    color: 'green',
+    color: 'white',
     fontSize: '30px',
   }}>Profile</h1>
  
   <div style={{textAlign: 'center',
-  border: '1px solid green',
+  border: '1px solid #062A42',
   margin: '0',
   height: '350px',
   padding: '0',
   width: '400px',
   borderRadius: '20px',
   margin: 'auto',
+  background: 'white'
   }}>
   <h2>
   <img  style={{ borderRadius: '50px',
-  PhotoSizeSelectActual: '70px',
+  PhotoSizeSelectActual: '100px',
 }}src={myuser?.user?.photoURL} alt="profile pic" />
   </h2>
   <h2>

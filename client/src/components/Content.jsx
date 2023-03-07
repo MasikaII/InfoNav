@@ -38,6 +38,7 @@ function Content() {
           width: "600px",
           margin: "40px auto",
           padding: "20rm",
+          background: 'white'
         }}>
           {blogs.map((blog, index) => (
             <div className="blog-preview" key={blog.id} >
@@ -45,7 +46,6 @@ function Content() {
           borderRadius: '20px',
           margin: '0.5rem',
           display: 'inline',
-
           }}>
               <h2>{blog.title}</h2>
               <p style={{

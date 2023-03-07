@@ -11,11 +11,14 @@ import Profile from './components/Profile';
 import Header from './components/common/header/Header';
 import Navbar from './components/common/header/navbar/Navbar';
 import SignIn from './components/mysignin'
-import { Button } from '@mui/material';
 import Chat from './components/Chat';
+import Post from './components/Post';
+
 function App() {
         return (
                 <>
+                <div style={{ background: "url(/The Future Of Ag Biosecurity In The U_S 1.svg)" }}>
+                </div>
                 <Header />
                  <BrowserRouter>
                         <Routes>
@@ -27,10 +30,10 @@ function App() {
                         <Route path="/about" element={<About />} />
                         <Route path="/signin" component={SignIn} />
                         <Route path="/chat" element={<Chat />} />
+                        <Route path="/post" element={<Post />} />
                         </Routes>
                 </BrowserRouter>
                 </>
         );
 }
-
 export default App;

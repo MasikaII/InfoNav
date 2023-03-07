@@ -1,3 +1,4 @@
+import { height } from "@mui/system";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 export const Register = (props) => {
@@ -15,7 +16,7 @@ export const Register = (props) => {
             display: "flex",
             justifyContent: "center",
             paddingTop:'10srem',
-            backgroundColor: "#010922",
+            backgroundColor: "white",
             height: "100vh",
             
         }}>
@@ -23,7 +24,7 @@ export const Register = (props) => {
             <h2 style={{
                 textAlign: "center",
                 fontWeight:'700',
-                color:'white'
+                color:'white',
             }}>Register</h2>
         <form className="register-form" onSubmit={handleSubmit}>
         <div style={{margin:'0.2rem'}}>
@@ -48,8 +49,9 @@ export const Register = (props) => {
         </form>
         <div style={{
             color:'white',                                                                                                                                
-            marginTop:"3rem",                                                                                                                             
-            textAlign:'center'   
+            marginTop:"1rem",                                                                                                                             
+            textAlign:'center',
+            marginBottom:'1rem'
         }}>
             <Link to="/login">
                 <span style={{

@@ -1,12 +1,15 @@
 .header {
-  margin-top: 20px;
+  margin-bottom: 20rem;
   display: flex;
   flex: 1;
+  z-index: 10;
   flex-direction: column;
-  background-color:#187741;
-  margin-top: 0;
-  padding: 20px;
+  position: sticky;
+  top: 0;
+  /* background-color:rgb(186,213,208), ; */
+  padding: 10px;
   margin: 0;
+  background: #062A42;
 
 }
 

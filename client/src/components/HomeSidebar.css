@@ -79,7 +79,7 @@
     font-size: 1.2rem;
     font-weight: 500;
     transition: all 0.3s ease;
-    border: 2px solid #187741;
+    border: 2px solid #062A42;
     padding: 1rem;
     margin-bottom: 1rem;
     justify-content: center;
@@ -87,7 +87,7 @@
 }
 
 .top_button:hover{
-    background-color: #187741;
+    background-color: #062A42;
 }
 
 .bottom_buttons{
@@ -96,12 +96,12 @@
     padding: 1rem;
     border-radius: 30px;
     color: #fff;
-    background-color: #187741;
+    background-color: #062A42;
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 500;
     transition: all 0.3s ease;
-    border: 1px solid #5f6472;
+    border: 1px solid #062A42;
     padding: 1rem;
     margin-bottom: 1rem;
     justify-content: center;

@@ -1,5 +1,7 @@
 import React from 'react'
 import SignIn from './mysignin'
+import { Link } from "react-router-dom";
+
 
 function GoogleAuth() {
   return (
@@ -14,17 +16,26 @@ function GoogleAuth() {
       height: '350px',
       width: '300px',
       borderRadius: '10px',
-      alignItems: 'center'
+      alignItems: 'center',
+      backgroundColor: '#187741',
     }} className= "sign in">
-      <div className="google-btn" >
-      <div className="google-icon-wrapper" >
-      <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
-      </div>
-      <p className="btn-text"><b>Sign in with google</b></p>
-      </div>
       <div>
       <SignIn />
       </div>
+      <span>
+        <Link to="/Login" style={{
+        borderRadius: '20px',
+        border: '2px solid white',
+        height: '35px',
+        width: '240px',
+        marginTop: '50%',
+        MarginBottom: '10px',
+        color: 'black',
+        background: 'white',
+        textDecoration: 'none',
+        fontSize: '15px',
+      }}>Login</Link>
+    </span>
     </div> 
 
   )
