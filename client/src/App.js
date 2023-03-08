@@ -15,10 +15,10 @@ import GoogleAuth from './components/GoogleAuth';
 import Chat from './components/Chat';
 import Blog from './components/blog';
 import { useSelector } from 'react-redux';
-import UserBlogs from './components/UserBlogs';
 import BlogInfo from './components/Bloginfo';
 import AddBlog from './components/AddBlog';
 import MyAuth from './components/myauth'
+import BlogEdit from './components/BlogEdit';
 
 function App() {
         const isLoggedIn = useSelector(state => state.isLoggedIn);
@@ -38,9 +38,9 @@ function App() {
                                         <Route path="/signin" component={GoogleAuth} />
                                         <Route path="/chat" element={<Chat />} />
                                         <Route path="/post" element={<Blog />} />
-                                        <Route path="/myblogs" element={<UserBlogs />} />
-                                        <Route path="/myblogs/:id" element={<BlogInfo />} />
-                                        <Route path="/myblogs/add" element={<AddBlog />} />
+                                        <Route path="/myblogs" element={<BlogInfo />} />
+                                        <Route path="/myblogs/:id" element={<BlogEdit />} />
+                                        <Route path="/blogs/add" element={<AddBlog />} />
                                 </Routes>
                         </BrowserRouter>
                 </>
