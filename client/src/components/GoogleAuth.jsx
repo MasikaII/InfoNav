@@ -8,7 +8,7 @@ function GoogleAuth() {
     <div style={{
       boxsizing: 'border-box',
       position: 'absolute',
-      border: '2px solid #187741',
+      border: '2px solid #062A42',
       padding: '0 1rem',
       borderradius: '20px',
       top: '167px',
@@ -17,25 +17,10 @@ function GoogleAuth() {
       width: '300px',
       borderRadius: '10px',
       alignItems: 'center',
-      backgroundColor: '#187741',
     }} className= "sign in">
       <div>
       <SignIn />
       </div>
-      <span>
-        <Link to="/Login" style={{
-        borderRadius: '20px',
-        border: '2px solid white',
-        height: '35px',
-        width: '240px',
-        marginTop: '50%',
-        MarginBottom: '10px',
-        color: 'black',
-        background: 'white',
-        textDecoration: 'none',
-        fontSize: '15px',
-      }}>Login</Link>
-    </span>
     </div> 
 
   )

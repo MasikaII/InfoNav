@@ -17,7 +17,7 @@ function About() {
             <h3>Streamline Connect Transform</h3>
           </div>
         </div>
-        <h2 style={{ textAlign: "center" }}>About Us</h2>
+        <h2 style={{ textAlign: "center", color:'white' }}>About Us</h2>
         </div>
         <span className="top_button" style={{height: "50px", 
           width: "200px",
@@ -65,7 +65,12 @@ function About() {
                <span className="top_button" style={{height: "50px", width: "200px"}}>
               <Link className="text_decorator" to="/Register" style={{ color: 'white',}}>Sign up</Link>
               </span>
+              <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+
               </div>
+              </div>
+          <div style={{textAlign: 'center', color: 'black'}}>
+          <h3> The Team </h3>
           </div>
     </>
   )

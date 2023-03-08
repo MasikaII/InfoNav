@@ -67,6 +67,7 @@ function Home() {
                      border: '1px solid white',
                      top: '390px'
                     }}>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
                         <div className='posHeader'>
                             <div> 
                             <h1 style={{}}>{post.title}</h1>
