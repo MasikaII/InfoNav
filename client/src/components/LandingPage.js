@@ -13,6 +13,7 @@ function LandingPage() {
                     <Landingsidebar />
                     <div className='landingpage_container'>
                         <Content />
+                        
                     </div>
                     <div className='loginmail'>
                         <Link to='/signup' style={{background: 'white'}}>Login</Link>

@@ -29,6 +29,8 @@ const MyAuth = () => {
         password: inputs.password,
       })
       .catch((err) => console.log(err));
+    
+    //test.users.save();
 
     const data = await res.data;
     console.log(data);
