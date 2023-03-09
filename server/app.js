@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from "cors";
+import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import router from "./routes/user-routes.js";
 import User from './models/User.js';
@@ -12,8 +13,10 @@ import blogRouter from './routes/blog-routes.js';
 const app = express()
 app.use(cors());
 app.use(express.json())
+app.use(bodyParser.json())
 app.use("/api/user", router);
 app.use("/api/blog", blogRouter);
+
 
 //Middeleware for requests
 /*
