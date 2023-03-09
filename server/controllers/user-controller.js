@@ -70,6 +70,5 @@ export const login = async (req, res, next) => {
   if (!validatePassword) {
     return res.status(400).json({ message: "Incorrect Password" })
   }
-  return res.status(200).json({ user: existingUser, message: "You are now logged in" })
+  return res.status(200).json({ user: existingUser, message: "Login Successfull" })
 }
-

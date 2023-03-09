@@ -20,7 +20,8 @@ import { useSelector } from 'react-redux';
 import UserBlogs from './components/UserBlogs';
 import BlogInfo from './components/Bloginfo';
 import AddBlog from './components/AddBlog';
-import MyAuth from './components/myauth'
+import MyAuth from './components/myauth';
+import { Auth0Provider } from "@auth0/auth0-react";
 
 function App() {
         const isLoggedIn = useSelector(state => state.isLoggedIn);
@@ -50,7 +51,7 @@ function App() {
     return (
         <>
 
-            <AuthOProvider
+            <Auth0Provider
                 domain="localhost:3000"
                 redirectUri={window.location.origin}
             >
@@ -65,7 +66,7 @@ function App() {
                     </Routes>
                 </BrowserRouter>
 
-            </AuthOProvider>
+            </Auth0Provider>
         </>
     );
 }
