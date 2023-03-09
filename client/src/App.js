@@ -21,6 +21,7 @@ import BlogInfo from './components/Bloginfo';
 import AddBlog from './components/AddBlog';
 import MyAuth from './components/myauth'
 import BlogEdit from './components/BlogEdit';
+import { Auth0Provider } from "@auth0/auth0-react";
 
 function App() {
         const isLoggedIn = useSelector(state => state.isLoggedIn);
