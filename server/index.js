@@ -18,7 +18,11 @@ const secret = 'dkmefoi3rimqdoqdm3ij3evghkikhhdfgklhsh';
 
 
 const configuration = new Configuration({
+<<<<<<< HEAD
     apiKey: "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",
+=======
+    apiKey: "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",
+>>>>>>> origin/masika
 });
 
 const openai = new OpenAIApi(configuration);
@@ -43,6 +47,7 @@ app.use(cookieParser());
 
 app.post('/', async (req, res) => {
     const { message } = req.body;
+    console.log(message, "message")
 
     const response = await openai.createCompletion({
         model: "text-davinci-003",
@@ -59,6 +64,7 @@ app.post('/', async (req, res) => {
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 });
+<<<<<<< HEAD
 
 
 //This is for our Blog post
@@ -198,3 +204,5 @@ app.post('/login', async (req, res) => {
 
 
  //mongodb+srv://InfoNav:rKJHOIFCXMfNCn6u@cluster0.qzctxa3.mongodb.net/?retryWrites=true&w=majority
+=======
+>>>>>>> origin/masika
