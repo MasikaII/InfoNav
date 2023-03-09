@@ -11,9 +11,9 @@ import Home from './components/Home';
 import About from './components/About';
 import Profile from './components/Profile';
 import Header from './components/common/header/Header';
-import Navbar from './components/common/header/navbar/Navbar';
-import SignIn from './components/mysignin'
-import { Button } from '@mui/material';
+//import Navbar from './components/common/header/navbar/Navbar';
+import GoogleAuth from './components/GoogleAuth';
+//import { Button } from '@mui/material';
 import Chat from './components/Chat';
 import { AuthOProvider } from "@authO/authO-react";
 
@@ -23,19 +23,19 @@ import { AuthOProvider } from "@authO/authO-react";
 function App() {
         return (
                 <>
-                <Header />
-                 <BrowserRouter>
-                        <Routes>
-                        <Route path="/" element={<LandingPage />} />
-                        <Route path="/profile" element={<Profile />} />
-                        <Route path="/login" element={<Login />} />
-                        <Route path="/register" element={<Register />} />
-                        <Route path="/home" element={<Home />} />
-                        <Route path="/about" element={<About />} />
-                        <Route path="/signin" component={SignIn} />
-                        <Route path="/chat" element={<Chat />} />
-                        </Routes>
-                </BrowserRouter>
+                        <Header />
+                        <BrowserRouter>
+                                <Routes>
+                                        <Route path="/" element={<LandingPage />} />
+                                        <Route path="/profile" element={<Profile />} />
+                                        <Route path="/login" element={<Login />} />
+                                        <Route path="/register" element={<Register />} />
+                                        <Route path="/home" element={<Home />} />
+                                        <Route path="/about" element={<About />} />
+                                        <Route path="/signin" component={GoogleAuth} />
+                                        <Route path="/chat" element={<Chat />} />
+                                </Routes>
+                        </BrowserRouter>
                 </>
         );
     return (
