@@ -2,14 +2,17 @@ import React, { useState } from "react";
 import BlogHeader from "./BlogHeader";
 import { Box, Button, InputLabel, TextField, Typography } from "@mui/material";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const labelStyles = { mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" }
+
 const AddBlog = () => {
   const [inputs, setInputs] = useState({
     title: "",
     description: "",
     image: "",
   });
+  const navigate = useNavigate();
   const handleChange = (e) => {
     setInputs((prevState) => ({
       ...prevState,
@@ -29,7 +32,8 @@ const AddBlog = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(inputs);
-    sendRequest().then(data => console.log(data));
+    sendRequest().then(data => console.log(data))
+      .then(() => navigate("/myblogs"));
   };
   return (
     <>
