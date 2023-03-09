@@ -4,6 +4,8 @@ import { Route, Routes } from 'react-router-dom';
 import "./App.css";
 import LandingPage from "./components/LandingPage";
 import Login from './components/Login';
+//import { Login } from './components/Login';
+import Mylogin from './components/Mylogin'
 import Register from './components/Register';
 import Home from './components/Home';
 import About from './components/About';
@@ -13,6 +15,11 @@ import Navbar from './components/common/header/navbar/Navbar';
 import SignIn from './components/mysignin'
 import { Button } from '@mui/material';
 import Chat from './components/Chat';
+import { AuthOProvider } from "@authO/authO-react";
+
+// import Feed from "./componentsChat";
+// import Sidebar from "./components/Sidebar";
+
 function App() {
         return (
                 <>
@@ -31,6 +38,27 @@ function App() {
                 </BrowserRouter>
                 </>
         );
+    return (
+        <>
+
+            <AuthOProvider
+                domain="localhost:3000"
+                redirectUri={window.location.origin}
+            >
+                <BrowserRouter>
+
+                    <Routes>
+                        <Route path="/" element={<LandingPage />} />
+                        <Route path="/Login" element={<Mylogin />} />
+                        <Route path="/register" element={<Register />} />
+                        <Route path="/Home" element={<Home />} />
+                        <Route path="/about" element={<About />} />
+                    </Routes>
+                </BrowserRouter>
+
+            </AuthOProvider>
+        </>
+    );
 }
 
 export default App;
