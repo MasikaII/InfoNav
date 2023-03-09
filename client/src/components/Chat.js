@@ -82,6 +82,9 @@ const ChatMessage = ({ message }) => {
                 {message.user === "gpt" &&  <img src="./mylogo.svg" alt="ai"/>
                
                 }
+                {message.user === "me" &&  <img src="./user.ico" alt="" />
+               
+                }
               </div>
               <div className="message">{message.message}</div>
             </div>

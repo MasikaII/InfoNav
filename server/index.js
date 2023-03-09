@@ -11,7 +11,7 @@ import blogRouter from './routes/blog-routes.js';
 // CONFIGURATIONS
 // OpenAI Configuration
 const configuration = new Configuration({
-    apiKey: "",
+    apiKey: "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",
 });
 
 const openai = new OpenAIApi(configuration);
