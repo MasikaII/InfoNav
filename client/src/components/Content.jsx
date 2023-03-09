@@ -38,6 +38,8 @@ function Content() {
           width: "600px",
           margin: "40px auto",
           padding: "20rm",
+          Top: '400px',
+          backgroundColor: 'white',
         }}>
           {blogs.map((blog, index) => (
             <div className="blog-preview" key={blog.id} >

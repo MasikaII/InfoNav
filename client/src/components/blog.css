@@ -1,0 +1,37 @@
+body{
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+main{
+  padding: 2px;
+  margin: 0 auto;
+  width: auto;
+  max-width: 700px;
+}
+
+header{
+  display: flex;
+}
+
+img{
+  max-width: 100%;
+}
+
+div.post {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 20px;
+}
+
+div.post div.text h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+div.post p.info{
+  margin: 6px 0;
+  color: #888;
+  display: flex;
+  gap: 10px;
+}

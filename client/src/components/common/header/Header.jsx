@@ -22,10 +22,10 @@ function Header () {
                 borderRadius: '20px',
                 top: '0',               
                 diplay: 'flex',
-                border: '3px solid #187741',
+                border: '3px solid #062A42',
                 color: '#187741',
-                fontSize: '15px',
-                 }}><a href="/about">Contact us</a></button>
+                fontSize: '15px',               
+                 }}><a href="/about" style={{ textDecoration: 'none', }}>Contact us</a></button>
           </section>
           <hr className="header-top__seperator" />
         </section>

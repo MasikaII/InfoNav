@@ -1,20 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+//import { BrowserRouter } from "react-router-dom";
 import './index.css';
+import { Provider } from "react-redux";
+import { store } from "./store";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <GoogleOAuthProvider clientId='89607218276-6p4iqm879ksr7atvqe68id9kfkohnqgk.apps.googleusercontent.com'>
-    <React.StrictMode>
+  <React.StrictMode>
+    <Provider store={store}>
       <App />
-    </React.StrictMode>
-
-  </GoogleOAuthProvider>
-
+    </Provider>
+  </React.StrictMode>
 );
 
 

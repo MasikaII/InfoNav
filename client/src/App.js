@@ -15,12 +15,16 @@ import Header from './components/common/header/Header';
 import GoogleAuth from './components/GoogleAuth';
 //import { Button } from '@mui/material';
 import Chat from './components/Chat';
-import { AuthOProvider } from "@authO/authO-react";
-
-// import Feed from "./componentsChat";
-// import Sidebar from "./components/Sidebar";
+import Blog from './components/blog';
+import { useSelector } from 'react-redux';
+import UserBlogs from './components/UserBlogs';
+import BlogInfo from './components/Bloginfo';
+import AddBlog from './components/AddBlog';
+import MyAuth from './components/myauth'
 
 function App() {
+        const isLoggedIn = useSelector(state => state.isLoggedIn);
+        console.log(isLoggedIn);
         return (
                 <>
                         <Header />
@@ -31,9 +35,14 @@ function App() {
                                         <Route path="/login" element={<Login />} />
                                         <Route path="/register" element={<Register />} />
                                         <Route path="/home" element={<Home />} />
+                                        <Route path="/signup" element={<MyAuth />} />
                                         <Route path="/about" element={<About />} />
                                         <Route path="/signin" component={GoogleAuth} />
                                         <Route path="/chat" element={<Chat />} />
+                                        <Route path="/post" element={<Blog />} />
+                                        <Route path="/myblogs" element={<UserBlogs />} />
+                                        <Route path="/myblogs/:id" element={<BlogInfo />} />
+                                        <Route path="/myblogs/add" element={<AddBlog />} />
                                 </Routes>
                         </BrowserRouter>
                 </>
