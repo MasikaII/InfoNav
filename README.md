@@ -1,2 +1,2 @@
 # InfoNav
-## Connect, Strealine, Connect
+## Connect, Streamline, Connect

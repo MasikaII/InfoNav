@@ -16,18 +16,6 @@ function Header () {
          }}>Info Nav</a>
         </section>
         <section className="header-top__navbar">
-          <section className="header-top__navigation">
-          <button style={{
-                height: '50px',
-                width: '190px',
-                borderRadius: '20px',
-                top: '0',               
-                diplay: 'flex',
-                border: '3px solid #062A42',
-                color: '#062A42',
-                fontSize: '15px',     
-                 }}><a style={{ textDecoration: 'none',}}href="/about">Contact us</a></button>
-          </section>
           <hr className="header-top__seperator" />
         </section>
       </section>

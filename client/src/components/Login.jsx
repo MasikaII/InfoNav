@@ -1,68 +1,76 @@
 import React, { useState } from "react"
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "./auth";
+import { Link, Navigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
+//import { useAuth } from "./auth";
+// Render Prop
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import axios from "axios";
 
-export const Login = (props) => {
-    const [email, setEmail] = useState('');
-    const [pass, setPass] = useState('');
-    const auth = useAuth()
-    const navigate = useNavigate()
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(email);
-        navigate('/home')
-    }
-    return (
-        <div style={{
-            display: "flex",
-            justifyContent: "center",
-            paddingTop:'10srem',
-            backgroundColor: "white",
-            height: "90vh",
-            
-        }}>
-        <div className="auth-form-container">
-            <h2 style={{
-                textAlign: "center",
-                fontWeight:'700',
-                color:'white'
-            }}>Log In</h2>
-            <form className="login-form" onSubmit={handleSubmit}>
-               <div style={{margin:'0.2rem'}}>
-                 <div>
-                    <label htmlFor="email">email</label>
-                 </div>
-                <input value={email} onChange={(e) => setEmail(e.target.value)}type="email" placeholder="youremail@gmail.com" id="email" name="email" />
-               </div>
-               
-<div>
-<div>
-    <label htmlFor="password">password</label>
-</div>
-                <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
-</div>
-                <button className="link-btn-login" type="submit">Log In</button>
-            </form>
-            {/* <button className="link-btn" onClick={() => props.onFormSwitch('register')}>Don't have an account? Register here.</button> */}
-            <div style={{
-                color:'white',
-                marginTop:"3rem",
-                textAlign:'center'
-            }}>
-                <Link to="/register">
-                    <span style={{
-                        color:'white',
-                        textDecoration:'none',
-                        fontSize:'.8rem',
-                        textAlign:'center'
-                    }}>
-                        Don't have an account? Register here.
-                    </span>
-                </Link>
-            </div>
-        </div>
-        </div>
-    )
+export default function Login() {
+        const [username, setUsername] = useState('');
+        const [password, setPassword] = useState('');
+        const [redirect, setRedirect] = useState('');
+        async function login(ev) {
+                ev.preventDefault();
+                const response = await fetch('http://localhost:7000/api/user/login', {
+                        method: 'POST',
+                        body: JSON.stringify({ username, password }),
+                        headers: { 'Content-Type': 'application/json' },
+                        credential: 'include'
+                });
+
+                if (response.ok) {
+                        setRedirect(true);
+                } else {
+                        alert('wrong credentials');
+                }
+        }
+
+        if (redirect) {
+                return <Navigate to={'/home'} />;
+        }
+
+        return (
+                <div>
+                        <div className="heading-container">
+                                <h3>
+                                        Login Form
+                                </h3>
+                        </div>
+
+                        <Box
+                                component="form"
+                                sx={{
+                                        '& > :not(style)': { m: 1, width: '25ch' },
+                                }}
+                                noValidate
+                                autoComplete="off"
+                        >
+                                <TextField id="email"
+                                        label="Enter your username"
+                                        variant="outlined"
+                                        value={username}
+                                        onChange={ev => setUsername(ev.target.value)} />
+                                <TextField id="password"
+                                        label="Enter your Password"
+                                        variant="outlined"
+                                        value={password}
+                                        onChange={ev => setPassword(ev.target.value)} />
+                        </Box>
+                        <Button variant="contained" onClick={login}>Log in</Button>
+                        <br /><br />
+                        <div>
+                                <Link to='/register'>
+                                        <span style={{
+                                                color: 'black',
+                                                textDecoration: 'none',
+                                        }}>
+                                                Don't have an account? Register here.
+                                        </span>
+                                </Link>
+                        </div>
+                </div>
+        );
 }
-export default Login;

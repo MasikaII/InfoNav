@@ -1,71 +1,66 @@
-import { height } from "@mui/system";
-import React, { useState } from "react";
+import React, { useState } from "react"
 import { Link } from "react-router-dom";
-export const Register = (props) => {
-    const [email, setEmail] = useState('');
-    const [pass, setPass] = useState('');
-    const [name, setName] = useState('');
+//import { useNavigate } from "react-router-dom";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(email);
+
+
+export default function Register() {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    async function register(ev) {
+        ev.preventDefault();
+        await fetch('http://localhost:4000/register', {
+            method: 'POST',
+            body: JSON.stringify({ username, password }),
+            headers: { 'Content-Type': 'application/json' },
+        })
     }
-
     return (
-        <div style={{
-            display: "flex",
-            justifyContent: "center",
-            paddingTop:'10srem',
-            backgroundColor: "white",
-            height: "100vh",
-            
-        }}>
-        <div className="auth-form-container">
-            <h2 style={{
-                textAlign: "center",
-                fontWeight:'700',
-                color:'white',
-            }}>Register</h2>
-        <form className="register-form" onSubmit={handleSubmit}>
-        <div style={{margin:'0.2rem'}}>
+        <div>
+            <div className="heading-container">
+                <h3>
+                    Sign Up Form
+                </h3>
+            </div>
+
+            <Box
+                component="form"
+                sx={{
+                    '& > :not(style)': { m: 1, width: '25ch' },
+                }}
+                noValidate
+                autoComplete="off"
+            >
+                <TextField id="username"
+                    label="Enter your username"
+                    variant="outlined"
+                    value={username}
+                    onChange={ev => setUsername(ev.target.value)} />
+                <TextField id="password"
+                    label="Enter your Password"
+                    variant="outlined"
+                    value={password}
+                    onChange={ev => setPassword(ev.target.value)} />
+
+
+            </Box>
+            <Button variant="contained" onClick={register}> Register </Button>
+            <br /><br />
             <div>
-            <label htmlFor="name">Full name</label>
-            </div>
-            <div>
-            <input value={name} name="name" onChange={(e) => setName(e.target.value)} id="name" placeholder="full Name" />
-            </div>
-            <div>
-            <label htmlFor="email">email</label>
-            </div>
-            <div>
-            <input value={email} onChange={(e) => setEmail(e.target.value)}type="email" placeholder="youremail@gmail.com" id="email" name="email" />
-            </div>
-            <div>
-            <label htmlFor="password">password</label>
-            </div>
-            <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
-            <div className="link-btn-login" type="submit">Register</div>
-            </div>
-        </form>
-        <div style={{
-            color:'white',                                                                                                                                
-            marginTop:"1rem",                                                                                                                             
-            textAlign:'center',
-            marginBottom:'1rem'
-        }}>
-            <Link to="/login">
-                <span style={{
-                    color:'white',
-                    textDecoration:'none',
-                    fontSize:'.8rem',
-                    textAlign:'center'
+                <Link to='/login'>
+                    <span style={{
+                        color: 'black',
+                        textDecoration: 'none',
                     }}>
-                     Already have an account? LogIn here.
+                        Already have an account? Sign in here.
                     </span>
                 </Link>
             </div>
         </div>
-        </div>
-    )
+    );
 }
-export default Register;
+
+

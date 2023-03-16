@@ -1,23 +1,33 @@
-const { Configuration, OpenAIApi } = require("openai");
-const express = require("express");
-const bodyParser = require("body-parser");
-const cors = require("cors");
+import { Configuration, OpenAIApi } from "openai";
+import express from 'express';
+import cors from "cors";
+import bodyParser from "body-parser";
+import mongoose from "mongoose";
+import router from "./routes/user-routes.js";
+import User from './models/User.js';
+import blogRouter from './routes/blog-routes.js';
 
+
+// CONFIGURATIONS
+// OpenAI Configuration
 const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: "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",
 });
 
 const openai = new OpenAIApi(configuration);
 // const response = await openai.listEngines();
 
-// Allowing our frontend to query our model
-const app = express()
-app.use(bodyParser.json())
-app.use(cors())
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
-const port = 3080
 
+// MIDDLEWARE
+const app = express()
+app.use(cors());
+app.use(express.json())
+app.use(bodyParser.json())
+app.use(express.urlencoded({ extended: true }))
+
+const port = 7000
+
+// CHAT STRING
 app.post('/', async (req, res) => {
     const { message } = req.body;
     console.log(message, "message")
@@ -34,6 +44,20 @@ app.post('/', async (req, res) => {
     })
 });
 
+
+// DATBASE SETUP
+const dbUrl = 'mongodb+srv://InfoNav:rKJHOIFCXMfNCn6u@cluster0.qzctxa3.mongodb.net/?retryWrites=true&w=majority';
+
+mongoose.connect(dbUrl)
+  .then(() => {
+    console.info("Connected to the DB");
+  })
+
+// verfying connection
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Example app listening at http://localhost:${port}`)
 });
+
+// ROUTES
+app.use("/api/user", router);
+app.use("/api/blog", blogRouter);
