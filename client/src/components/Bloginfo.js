@@ -3,6 +3,10 @@ import BlogHeader from "./BlogHeader";
 import axios from "axios";
 import UserBlogs from "./UserBlogs";
 
+
+/*
+  * This function retrieves Blogs by ID
+  * */
 const BlogInfo = () => {
   const [user, setUser] = useState();
   const id = localStorage.getItem("userId");

@@ -13,14 +13,19 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+
+/*
+  * This is the blog body
+  * */
 const UserBlogs = ({ title, description, imageURL, userName, isUser, id }) => {
   const navigate = useNavigate();
   const handleEdit = (e) => {
     navigate(`/myblogs/${id}`)
   };
+  /*This method deletes a blog*/
   console.log(title, isUser);
   const deleteRequest = async () => {
-    const res = axios.delete(`http://localhost:7000/api/blog/delete/${id}`)
+    const res = await axios.delete(`http://localhost:7000/api/blog/delete/${id}`)
       .catch(err => console.log(err));
     const data = await res.data;
     return data;

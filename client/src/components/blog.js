@@ -5,6 +5,10 @@ import BlogHeader from './BlogHeader';
 import axios from 'axios';
 import UserBlogs from './UserBlogs';
 
+
+/*
+  * This Function retrieves all Blogs
+  * */
 const Blog = () => {
   const [blogs, setBlogs] = useState();
   const sendRequest = async () => {
