@@ -8,6 +8,10 @@ function SignIn() {
   const [value, setValue] = useState('');
   const Navigate = useNavigate();
 
+<<<<<<< HEAD
+  const handleClick = async() => {
+    try{
+=======
   const handleClick = async () => {
     // signInWithPopup(auth, provider).then((data) => {
     //   setValue(data.user.email);
@@ -16,6 +20,7 @@ function SignIn() {
     //   Navigate("/home");
     // });
     try {
+>>>>>>> master
       const data = await signInWithPopup(auth, provider);
       // setValue(data.user.email);
       alert(JSON.stringify(data))
@@ -35,12 +40,21 @@ function SignIn() {
     <div>
       {value ? <Home /> :
         <button onClick={handleClick} style={{
+<<<<<<< HEAD
+        borderRadius: '20px',
+        border: '1px solid #5f6472',
+        height: '35px',
+        width: '240px',
+        marginTop: '20px',
+      }} className="Googlef">Sign in with Google</button>
+=======
           borderRadius: '20px',
           border: '1px solid #5f6472',
           height: '35px',
           width: '240px',
           marginTop: '20px',
         }} className="Googlef">Sign in with Google</button>
+>>>>>>> master
       }
     </div>
   );

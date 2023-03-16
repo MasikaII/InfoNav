@@ -6,6 +6,7 @@
     width: 25vh;
     padding-top: 5rem;
     justify-content: space-evenly;
+    border-radius: 1px solid black;
   }
 
   .top_button{
@@ -46,4 +47,111 @@
     justify-content: center;
     margin: 0.5rem;
   
-  }
+  } */
+
+
+/* making it responsive  */
+
+/* Large screens */
+.landingpage_container{
+    display: flex;
+    align-items: center;
+    height: 90vh;
+    padding: 0;
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    height:50vh;
+    width: 25vh;
+    padding-top: 5rem;
+    justify-content: space-evenly;
+}
+
+.top_button{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 30px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid #062A42;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.top_button:hover{
+    background-color: #062A42;
+}
+
+.bottom_buttons{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 30px;
+    color: #fff;
+    background-color: #062A42;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid #062A42;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+    margin: 0.5rem;
+}
+
+/* Medium screens */
+@media only screen and (max-width: 768px) {
+    .landingpage_container{
+        flex-direction: column-reverse;
+        height: auto;
+        padding: 2rem;
+    }
+
+    .sidebar{
+        width: 100%;
+        height: auto;
+        padding-top: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .top_button,
+    .bottom_buttons{
+        width: 100%;
+    }
+
+    .top_button{
+        margin-bottom: 1rem;
+    }
+
+    .nav_search{
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
+
+/* Small screens */
+@media only screen and (max-width: 480px) {
+    .sidebar{
+        padding: 1rem;
+    }
+
+    .nav_link,
+    .top_button,
+    .bottom_buttons{
+        font-size: 1rem;
+    }
+
+    .nav_search{
+        font-size: 0.8rem;
+    }
+}

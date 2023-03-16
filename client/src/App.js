@@ -28,13 +28,12 @@ function App() {
         console.log(isLoggedIn);
         return (
                 <>
-                        <Header />
-                        <BrowserRouter>
-                                <Routes>
-                                        <Route path="/" element={<LandingPage />} />
-                                        <Route path="/profile" element={<Profile />} />
-                                        <Route path="/login" element={<Login />} />
-                                        <Route path="/register" element={<Register />} />
+                <div style={{ background: "url(/The Future Of Ag Biosecurity In The U_S 1.svg)" }}>
+                </div>
+                <Header />
+                 <BrowserRouter>
+                        <Routes>
+                        <Route path="/" element={<LandingPage />} />
                                         <Route path="/home" element={<Home />} />
                                         <Route path="/signup" element={<MyAuth />} />
                                         <Route path="/about" element={<About />} />
@@ -52,7 +51,6 @@ function App() {
         <>
 
             <Auth0Provider
-                domain="localhost:3000"
                 redirectUri={window.location.origin}
             >
                 <BrowserRouter>

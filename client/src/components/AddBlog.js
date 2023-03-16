@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import BlogHeader from "./BlogHeader";
 import { Box, Button, InputLabel, TextField, Typography } from "@mui/material";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const labelStyles = { mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" }
 const AddBlog = () => {
@@ -10,6 +11,7 @@ const AddBlog = () => {
     description: "",
     image: "",
   });
+  const navigate = useNavigate();
   const handleChange = (e) => {
     setInputs((prevState) => ({
       ...prevState,
@@ -34,18 +36,18 @@ const AddBlog = () => {
   return (
     <>
       <BlogHeader />
-      <div>
+      <div style={{ height: '100vh'}}>
         <form onSubmit={handleSubmit}>
-          <Box border={3} borderColor="green" borderRadius={10} boxShadow="10px 10px 20px #ccc"
+          <Box border={1} borderColor=""
             padding={3} margin={"auto"} marginTop={3} display="flex" flexDirection={"column"} width={"80%"}>
-            <Typography fontWeight={"bold"} padding={3} color="grey" variant="h2" textAlign={"center"}>Post Your Blog</Typography>
-            <InputLabel sx={labelStyles}>Title</InputLabel>
+            <Typography fontWeight={"bold"} padding={3} color="grey" variant="h3" textAlign={"center"}>Post Your Blog</Typography>
+            <InputLabel sx={labelStyles} style={{color: 'black'}}>Title</InputLabel>
             <TextField name="title" onChange={handleChange} value={inputs.title} margin="normal" variant="outlined" />
-            <InputLabel sx={labelStyles}>Description</InputLabel>
+            <InputLabel sx={labelStyles} style={{color: 'black'}}>Description</InputLabel>
             <TextField name="description" onChange={handleChange} value={inputs.description} margin="normal" variant="outlined" />
-            <InputLabel sx={labelStyles}>ImageURL</InputLabel>
+            <InputLabel sx={labelStyles} style={{color: 'black'}}>ImageURL</InputLabel>
             <TextField name="imageURL" onChange={handleChange} value={inputs.imageURL} margin="normal" variant="outlined" />
-            <Button sx={{ mt: 2, borderRadius: 4 }} variant="contained" color="success" type="submit">Submit</Button>
+            <Button sx={{ mt: 2, borderRadius: 4, backgroundColor: '#062A42' }} variant="contained" color="success" type="submit">Submit</Button>
           </Box>
         </form>
       </div>
@@ -53,5 +55,4 @@ const AddBlog = () => {
   );
 }
 
-export default AddBlog
-
+export default AddBlog;

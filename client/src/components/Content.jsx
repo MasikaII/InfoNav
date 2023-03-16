@@ -47,7 +47,6 @@ function Content() {
           borderRadius: '20px',
           margin: '0.5rem',
           display: 'inline',
-
           }}>
               <h2>{blog.title}</h2>
               <p style={{

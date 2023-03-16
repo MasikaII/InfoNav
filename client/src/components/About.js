@@ -22,7 +22,6 @@ function About() {
           <div class="box-main" style={{color: 'white'}}>
             <div class="title">
               <h1 style={{ textAlign: "center"}}>About Us</h1>
-              <hr style={{ backgroundColor: '#062A42'}}></hr>
             </div>
         <span className="top_button" style={{height: "50px", 
           width: "200px",
@@ -43,10 +42,7 @@ function About() {
               Inspired by this challenge, we decided to develop an AI-enhanced website that would provide farmers with the information
               they need to make informed decisions. We worked tirelessly to build a platform that could collect, analyze, and present data
               in a way that was easily accessible and understandable for farmers.</p>
-
-            <br></br>
             <p class="text-small">
-
               Our AI-enhanced website leverages advanced machine learning algorithms to provide farmers with real-time weather forecasts,
               market prices, and disease control methods. This information is delivered through an easy-to-use interface, making it accessible
               to even the most technologically challenged farmers.
@@ -83,4 +79,3 @@ function About() {
 }
 
 export default About
-

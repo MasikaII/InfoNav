@@ -13,15 +13,16 @@ const BlogHeader = () => {
     <AppBar
       position="sticky"
       sx={{
-        background: "linear-gradient(90deg, rgba(58,83,180,1) 0%, rgba(29,120,253,1) 50%, rgba(76,252,69,0.711922268907563) 100%)",
+        background: 'transparent',
       }}>
       <Toolbar>
-        <Typography variant="h4">InfoBlog</Typography>
+        <Typography variant="h4"></Typography>
         {isLoggedIn && <Box display="flex" marginLeft="auto" marginRight={"auto"}>
-          <Tabs value={value} onChange={(ev, val) => setValue(val)}>
-            <Tab LinkComponent={Link} to="/post" label="All Blogs" />
-            <Tab LinkComponent={Link} to="/myblogs" label="My Blogs" />
-            <Tab LinkComponent={Link} to="/blogs/add" label="Add Blog" />
+          <Tabs value={value} onChange={(ev, val) => setValue(val)} >
+            <Tab LinkComponent={Link} to="/post" label="All Blogs"  style={{color: 'white'}}/>
+            <Tab LinkComponent={Link} to="/myblogs" label="My Blogs"  style={{color: 'white'}}/>
+            <Tab LinkComponent={Link} to="/blogs/add" label="Add Blog" style={{color: 'white'}} />
+            <Tab LinkComponent={Link} to="/Home" label="Home" style={{color: 'white'}} />
           </Tabs>
         </Box>}
         <Box display="flex" marginLeft="auto">
