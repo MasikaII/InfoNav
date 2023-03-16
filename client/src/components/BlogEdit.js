@@ -5,6 +5,10 @@ import axios from "axios";
 import { Box, Button, InputLabel, TextField, Typography } from "@mui/material";
 const labelStyles = { mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" }
 
+
+/*
+  * This Function is Used to create your BlogPost
+  */
 const BlogEdit = () => {
   const navigate = useNavigate();
   const [blog, setBlog] = useState();
@@ -44,12 +48,28 @@ const BlogEdit = () => {
     const data = await res.data;
     return data;
   }
-  const handleSubmit = (e) => {
-    e.preventDefault()
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     console.log(inputs);
-    sendRequest().then(data => console.log(data))
-      .then(() => navigate("/myblogs"));
-  }
+    try {
+      const data = await sendRequest();
+      navigate("/myblogs");
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  /*
+    const handleSubmit = async (e) => {
+      e.preventDefault()
+      console.log(inputs);
+      sendRequest()
+        .then(data => console.log(data))
+        .then(() => navigate("/myblogs"));
+    }
+    */
   return (
     <>
       <div>
