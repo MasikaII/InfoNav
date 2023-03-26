@@ -15,52 +15,92 @@ const MyAuth = () => {
     password: "",
   });
   const [isSignup, setIsSignup] = useState(false);
+  const [error, setError] = useState("");
+
   const handleChange = (e) => {
     setInputs((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }));
   };
+
   const sendRequest = async (type = "login") => {
-    const res = await axios
-      .post(`http://localhost:7000/api/user/${type}`, {
+    try {
+      const res = await axios.post(`http://localhost:7000/api/user/${type}`, {
         name: inputs.name,
         email: inputs.email,
         password: inputs.password,
-      })
-      .catch((err) => console.log(err));
-    
-    //test.users.save();
-
-    const data = await res.data;
-    console.log(data);
-    return data;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(inputs);
-    if (isSignup) {
-      sendRequest("signup")
-        .then((data) => localStorage.setItem("userId", data.user._id))
-        .then(() => dispatch(authActions.login()))
-        .then(() => navigate("/home"))
-        .catch((error) => {
-          console.error(error);
-        });
-    } else {
-      sendRequest()
-        .then((data) => localStorage.setItem("userId", data.user._id))
-        .then(() => dispatch(authActions.login()))
-        .then(() => navigate("/home"))
-        .catch((error) => {
-          console.error(error);
-        });
+      });
+      const data = await res.data;
+      return data;
+    } catch (error) {
+      throw new Error(error.response.data.message);
     }
   };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(inputs);
+    try {
+      const data = await (isSignup ? sendRequest("signup") : sendRequest());
+      localStorage.setItem("userId", data.user._id);
+      dispatch(authActions.login());
+      navigate("/home");
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
+  /*
+    const sendRequest = async (type = "login") => {
+      const res = await axios
+        .post(`http://localhost:7000/api/user/${type}`, {
+          name: inputs.name,
+          email: inputs.email,
+          password: inputs.password,
+        })
+        .catch((err) => console.log(err));
+  
+      //test.users.save();
+  
+      const data = await res.data;
+      console.log(data);
+      return data;
+    };
+  
+  
+  
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      console.log(inputs);
+      if (isSignup) {
+        sendRequest("signup")
+          .then((data) => localStorage.setItem("userId", data.user._id))
+          .then(() => dispatch(authActions.login()))
+          .then(() => navigate("/home"))
+          .catch((error) => {
+            console.error(error);
+          });
+      } else {
+        sendRequest()
+          .then((data) => localStorage.setItem("userId", data.user._id))
+          .then(() => dispatch(authActions.login()))
+          .then(() => navigate("/home"))
+          .catch((error) => {
+            console.error(error);
+          });
+      }
+    };
+    */
   return (
     <>
       <BlogHeader />
+
+      {error && (
+        <div style={{ backgroundColor: "#ffe4e4", width: "30%", color: "#bf1650", padding: "10px", borderRadius: "5px", marginTop: "10px" }}>
+          {error}
+        </div>
+      )}
       <div>
         <form onSubmit={handleSubmit}>
           <Box
