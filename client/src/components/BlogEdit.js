@@ -7,7 +7,7 @@ const labelStyles = { mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" }
 
 
 /*
-  * This Function is Used to create your BlogPost
+  * This Function is Used to create and edit your BlogPost
   */
 const BlogEdit = () => {
   const navigate = useNavigate();
