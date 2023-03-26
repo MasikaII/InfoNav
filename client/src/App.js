@@ -36,32 +36,12 @@ function App() {
                                         <Route path="/chat" element={<Chat />} />
                                         <Route path="/post" element={<Blog />} />
                                         <Route path="/myblogs" element={<BlogInfo />} />
-                                        <Route path="/myblogs/:id" component={<BlogEdit />} />
+                                        <Route path="/myblogs/:id" element={<BlogEdit />} />
                                         <Route path="/blogs/add" element={<AddBlog />} />
                                 </Routes>
                         </BrowserRouter>
                 </>
         );
-        {/*        return (
-                <>
-
-                        <Auth0Provider
-                                redirectUri={window.location.origin}
-                        >
-                                <BrowserRouter>
-
-                                        <Routes>
-                                                <Route path="/" element={<LandingPage />} />
-                                                <Route path="/Login" element={<Mylogin />} />
-                                                <Route path="/Home" element={<Home />} />
-                                                <Route path="/about" element={<About />} />
-                                        </Routes>
-                                </BrowserRouter>
-
-                        </Auth0Provider>
-                </>
-        );*/}
-
 }
 
 export default App;
