@@ -95,7 +95,12 @@ const MyAuth = () => {
   return (
     <>
       <BlogHeader />
-      {error && <div>{error}</div>}
+
+      {error && (
+        <div style={{ backgroundColor: "#ffe4e4", width: "30%", color: "#bf1650", padding: "10px", borderRadius: "5px", marginTop: "10px" }}>
+          {error}
+        </div>
+      )}
       <div>
         <form onSubmit={handleSubmit}>
           <Box

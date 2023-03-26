@@ -1,19 +1,22 @@
 import React, { useState } from "react";
 import BlogHeader from "./BlogHeader";
-import { Box, Button, InputLabel, TextField, Typography } from "@mui/material";
+import { Box, Button, TextField, Typography } from "@mui/material";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const labelStyles = { mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" };
+//const labelStyles = { mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" };
 
 const AddBlog = () => {
   const [inputs, setInputs] = useState({
     title: "",
     description: "",
-    imageURL: "",
+    image: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
+  // Define the handleChange function to update state when the user types in an input field
   const handleChange = (e) => {
     setInputs((prevState) => ({
       ...prevState,
@@ -21,22 +24,40 @@ const AddBlog = () => {
     }));
   };
 
+  // Define the sendRequest function to send a POST request to the server
   const sendRequest = async () => {
-    const res = await axios.post("http://localhost:7000/api/blog/add", {
-      title: inputs.title,
-      description: inputs.description,
-      imageURL: inputs.imageURL,
-      user: localStorage.getItem("userId"),
-    }).catch(err => console.log(err));
-    const data = await res.data;
-    return data;
+    try {
+      setIsLoading(true); // Set isLoading to true to indicate that the form submission is in progress
+      const res = await axios.post("http://localhost:7000/api/blog/add", {
+        title: inputs.title,
+        description: inputs.description,
+        image: inputs.imageURL,
+        user: localStorage.getItem("userId")
+      });
+      const data = res.data;
+      setIsLoading(false); // Set isLoading to false to indicate that the form submission is complete
+
+      return data;
+    } catch (error) {
+      setIsLoading(false); // Set isLoading to false to indicate that the form submission is complete
+      setError(error.response?.data?.message || "An unknown error occured.");  // Set the error state to the error message returned by the server or a default error message
+    }
   };
 
-  const handleSubmit = (e) => {
+  // Define the handleSubmit function to handle form submission
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    sendRequest()
-      .then((data) => console.log(data))
-      .then(() => navigate("/myblogs"));
+    setIsLoading(true); // Set isLoading to true to indicate that the form submission is in progress
+    setError(null); // Clear the error state
+    try {
+      const data = await sendRequest();  // Call the sendRequest function to send the form data to the server and get the response data
+      console.log(data);
+      navigate("/myblogs");
+    } catch (error) {
+      console.log(error);
+    }
+    setIsLoading(false);  // Set isLoading to false to indicate that the form submission is complete
+
   };
 
   return (
@@ -55,6 +76,11 @@ const AddBlog = () => {
         <Typography variant="h4" sx={{ fontWeight: "bold", mb: 4 }}>
           Post Your Blog
         </Typography>
+        {error && (
+          <div style={{ backgroundColor: "#ffe4e4", color: "#bf1650", padding: "10px", borderRadius: "5px", marginTop: "10px" }}>
+            {error}
+          </div>
+        )}
         <Box
           sx={{
             width: "50%",
@@ -94,6 +120,7 @@ const AddBlog = () => {
             sx={{ mb: 4, width: "100%" }}
           />
           <Button
+            disabled={isLoading}
             variant="contained"
             sx={{
               mt: 4,
@@ -116,66 +143,3 @@ const AddBlog = () => {
 
 export default AddBlog;
 
-
-/*
-import React, { useState } from "react";
-import BlogHeader from "./BlogHeader";
-import { Box, Button, InputLabel, TextField, Typography } from "@mui/material";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
-
-const labelStyles = { mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" }
-const AddBlog = () => {
-  const [inputs, setInputs] = useState({
-    title: "",
-    description: "",
-    image: "",
-  });
-  const navigate = useNavigate();
-  const handleChange = (e) => {
-    setInputs((prevState) => ({
-      ...prevState,
-      [e.target.name]: e.target.value,
-    }));
-  };
-  const sendRequest = async () => {
-    const res = await axios.post("http://localhost:7000/api/blog/add", {
-      title: inputs.title,
-      description: inputs.description,
-      image: inputs.imageURL,
-      user: localStorage.getItem("userId")
-    }).catch(err => console.log(err));
-    const data = await res.data;
-    return data
-  }
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(inputs);
-    sendRequest()
-      .then(data => console.log(data))
-      .then(() => navigate("/myblogs"));;
-  };
-  return (
-    <>
-      <BlogHeader />
-      <div style={{ height: '100vh' }}>
-        <form onSubmit={handleSubmit}>
-          <Box border={1} borderColor=""
-            padding={3} margin={"auto"} marginTop={3} display="flex" flexDirection={"column"} width={"80%"}>
-            <Typography fontWeight={"bold"} padding={3} color="grey" variant="h3" textAlign={"center"}>Post Your Blog</Typography>
-            <InputLabel sx={labelStyles} style={{ color: 'black' }}>Title</InputLabel>
-            <TextField name="title" onChange={handleChange} value={inputs.title} margin="normal" variant="outlined" />
-            <InputLabel sx={labelStyles} style={{ color: 'black' }}>Description</InputLabel>
-            <TextField name="description" onChange={handleChange} value={inputs.description} margin="normal" variant="outlined" />
-            <InputLabel sx={labelStyles} style={{ color: 'black' }}>ImageURL</InputLabel>
-            <TextField name="imageURL" onChange={handleChange} value={inputs.imageURL} margin="normal" variant="outlined" />
-            <Button sx={{ mt: 2, borderRadius: 4, backgroundColor: '#062A42' }} variant="contained" color="success" type="submit">Submit</Button>
-          </Box>
-        </form>
-      </div>
-    </>
-  );
-}
-
-export default AddBlog;
-*/
