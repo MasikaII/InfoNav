@@ -7,14 +7,16 @@ import { store } from "./store";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { GoogleOAuthProvider } from '@react-oauth/google';
-
+import { BlogsProvider } from './components/deleteblog';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <BlogsProvider>
+        <App />
+      </BlogsProvider>
     </Provider>
   </React.StrictMode>
 );
