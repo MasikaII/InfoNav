@@ -19,10 +19,10 @@ const BlogHeader = () => {
         <Typography variant="h4"></Typography>
         {isLoggedIn && <Box display="flex" marginLeft="auto" marginRight={"auto"}>
           <Tabs value={value} onChange={(ev, val) => setValue(val)} >
-            <Tab LinkComponent={Link} to="/post" label="All Blogs"  style={{color: 'white'}}/>
-            <Tab LinkComponent={Link} to="/myblogs" label="My Blogs"  style={{color: 'white'}}/>
-            <Tab LinkComponent={Link} to="/blogs/add" label="Add Blog" style={{color: 'white'}} />
-            <Tab LinkComponent={Link} to="/Home" label="Home" style={{color: 'white'}} />
+            <Tab LinkComponent={Link} to="/Home" label="Home" style={{ color: 'green' }} />
+            <Tab LinkComponent={Link} to="/post" label="All Blogs" style={{ color: 'green' }} />
+            <Tab LinkComponent={Link} to="/myblogs" label="My Blogs" style={{ color: 'green' }} />
+            <Tab LinkComponent={Link} to="/blogs/add" label="Add Blog" style={{ color: 'green' }} />
           </Tabs>
         </Box>}
         <Box display="flex" marginLeft="auto">
@@ -41,3 +41,4 @@ const BlogHeader = () => {
 };
 
 export default BlogHeader
+
